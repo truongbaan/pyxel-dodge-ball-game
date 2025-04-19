@@ -12,11 +12,11 @@ from screens.WinScreen import WinScreen
 from screens.HighScoreScreen import HighScoreScreen
 from screens.MultiplayerScreen import MultiplayerScreen
 from screens.ChallengeScreen import ChallengeScreen
-from score import load_scores
+from screens.PVEScreen import PVEScreen
+from screens.LoseToAiScreen import LostToAiScreen
+from screens.WinToAiScreen import WinToAiScreen
 
-#how to make the exe
-#pyinstaller --onedir --console --add-data "D:\game\models;models/" --add-data "D:\game\screens;screens/" --add-data "D:\game\map;map/"  "D:\game\main.py"
-#remember to delete the .py file (model, screen, etc)
+from score import load_scores
 
 class App:
     def __init__(self):
@@ -42,7 +42,11 @@ class App:
             "WinScreen": None,
             "HighScoreScreen": None,
             "MultiplayerScreen": None,
-            "ChallengeScreen": None
+            "ChallengeScreen": None,
+            "PVEScreen": None,
+            "LostToAiScreen": None,
+            "WinToAiScreen": None
+            
         }
 
         pyxel.mouse(visible=True)
@@ -61,22 +65,42 @@ class App:
     def change_screen(self, new_screen):
         print("Change to screen: " + new_screen)
         """Function to switch screens"""
+        
         if new_screen == "GameScreen":
             self.screens["GameScreen"] = GameScreen(self)  # Reinitialize with updated TILE_MAP
+       
         if new_screen == "LostScreen":
             self.last_screen = self.current_screen
             self.last_score = self.screens[self.current_screen].score
             self.screens["LostScreen"] = LostScreen(self, self.last_score)  # Reinitialize with updated score
+        
         if new_screen == "WinScreen":
             self.last_score = self.screens["GameScreen"].score
             self.screens["WinScreen"] = WinScreen(self, self.last_score)  # Reinitialize with updated score
+        
         if new_screen == "HighScoreScreen":
             self.screens["HighScoreScreen"] = HighScoreScreen(self)  # Reinitialize with updated TILE_MAP
+        
         if new_screen == "MultiplayerScreen":
             self.screens["MultiplayerScreen"] = MultiplayerScreen(self)  # Reinitialize with updated TILE_MAP
+        
+        if new_screen == "PVEScreen":
+            self.screens["PVEScreen"] = PVEScreen(self)  # Reinitialize with updated TILE_MAP
+        
         if new_screen == "ChallengeScreen":
             self.screens["ChallengeScreen"] = ChallengeScreen(self)  # Reinitialize with updated TILE_MAP
+        
+        if new_screen == "LostToAiScreen":
+            self.last_screen = self.current_screen
+            self.last_score = self.screens[self.current_screen].score
+            self.screens["LostToAiScreen"] = LostToAiScreen(self, self.last_score)  # Reinitialize with updated score
+        
+        if new_screen == "WinToAiScreen":
+            self.last_screen = self.current_screen
+            self.last_score = self.screens[self.current_screen].score
+            self.screens["WinToAiScreen"] = WinToAiScreen(self, self.last_score)  # Reinitialize with updated score
             
+        
             
         if new_screen in self.screens:
             self.current_screen = new_screen

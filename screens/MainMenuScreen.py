@@ -12,8 +12,9 @@ class MainMenuScreen:
             Button(80 + int(pyxel.width /10), 35 + int(pyxel.height /5), 70, 30, "GameModeScreen", "Game Mode"),
             Button(40 + int(pyxel.width /10), 70 + int(pyxel.height /5), 45, 40, "HighScoreScreen", "High Score"),
             Button(90 + int(pyxel.width /10), 70 + int(pyxel.height /5), 60, 40, "ChallengeScreen", "Challenge"),
-            Button(40 + int(pyxel.width /10), 115 + int(pyxel.height/5),110,50, "MultiplayerScreen", "Multiplay"),
-            Button(40 + int(pyxel.width /10), 170 + int(pyxel.height/5), 110, 50, "Quit")
+            Button(40 + int(pyxel.width /10), 115 + int(pyxel.height/5),110,30, "MultiplayerScreen", "Multiplay"),
+            Button(40 + int(pyxel.width /10), 150 + int(pyxel.height/5),110,25, "PVEScreen", "PVE"),
+            Button(40 + int(pyxel.width /10), 180 + int(pyxel.height/5), 110, 40, "Quit")
         ]  # Closing bracket here
         pyxel.mouse(visible=True)
         
