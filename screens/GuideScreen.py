@@ -92,8 +92,7 @@ class GuideScreen:
                 "Press P to pause the game (only works for normal play)",
                 "Tab usage",
                 "Press TAB when you're in the game",
-                "to return to the map choosing screen",
-                "(only works for normal play)"
+                "to return to the map choosing screen"
             )    
             for line in line:
                 center_text(line, y)
@@ -109,6 +108,7 @@ class GuideScreen:
             center_text("If you dont dodge it, you will lose health",int(pyxel.height / 10) + LINE_SIZE * 8)
             center_text("You will lose after a certain hit",int(pyxel.height / 10) + LINE_SIZE * 10)
             center_text("Try to survive as long as possible, have fun!",int(pyxel.height / 10) + LINE_SIZE * 12)
+            center_text("NOTE: Game Mode only applies for single player",int(pyxel.height / 10) + LINE_SIZE * 14)
             
         if self.page == 2:
             #multiplayer guide
@@ -179,6 +179,6 @@ class GuideScreen:
 # 15: Light Yellow
 
 #page 0: for single play guide
-#page 1: explain how to unlock maps
+#page 1: explain how to play the game
 #page 2: guide key bind for multiple player
 #page 3: explain about challenge (map will be random, could save score)

@@ -11,7 +11,7 @@ def load_scores(filename = "scores.txt"):
         with open(filename, "r") as file:
             for line in file:
                 map_number, score, cleared = line.strip()[1 : -1].split(",") # 1 and -1 is to ignore the '[' and the ']'
-                scores.append([int(map_number), int(score), int(cleared)])
+                scores.append([int(map_number), float(score), int(cleared)])
     except FileNotFoundError:
         print(f"File not found: {filename}. Initializing default scores.")
         scores = [[i, 0, 0] for i in range(24)]
