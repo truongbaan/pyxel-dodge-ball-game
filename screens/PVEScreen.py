@@ -1,4 +1,4 @@
-# screens: PVESScreen
+# screens/ PVESScreen.py
 import pyxel
 from models.world import World, world_item_draw, TILE_SIZE, WorldItem # Import from models
 from models.player import Player

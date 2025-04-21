@@ -1,4 +1,4 @@
-# screens/game.py
+# screens/ChallengeScreen.py
 import pyxel
 import models.world as world
 from models.world import World, world_item_draw, TILE_SIZE, WorldItem # Import from models
