@@ -45,8 +45,8 @@ This project is a dodgeball-style game developed using the Pyxel library. It was
 
 1. **Clone the Repository**
    ```bash
-   git clone <your-repo-link>
-   cd <your-repo-name>
+   git clone https://github.com/truongbaan/pyxel-dodge-ball-game.git
+   cd pyxel-dodge-ball-game
    ```
 
 2. **Install Python**
